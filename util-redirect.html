@@ -1,0 +1,50 @@
+<!-- gets the redirection string from the url and allows th user to follow through with it -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Redirect to new url</title>
+
+</head>
+<body>
+    
+    <main>
+        <div class="box-message">
+            <p>
+                This is a cloning project to copy one webpage, so the link you chose points nowhere.<br>
+                However, instead of admiring a beautiful 404 page, you can go to the original link from the cloned webpage by clicking below:
+            </p>
+            <br>
+
+            <div id="redirect-link">
+                <!-- here i'll insert the <a href> tag with the original link via javascript -->
+            </div>
+            
+        </div>
+    </main>
+
+    
+    <script>
+        // sounds like its a good idea to have the <script> last in the page
+        const queryString = window.location.search;     // ?original=www.somesite.com/somepage.html
+        const urlParams = new URLSearchParams(queryString);
+        //console.log(queryString);
+        //console.log(urlParams);
+
+        let originalLink = urlParams.get('original')  // We can then parse the query string’s parameters using URLSearchParams:
+        originalLink = (originalLink ? originalLink : " ").replace(' ','');
+        //console.log(originalLink, typeof originalLink, originalLink.replace(' ','')?'truthy':'falsey');
+
+        const originalLinkText = originalLink ? originalLink : 
+            "Error - param invalid: '"+queryString+"'</br>Use '?original=www.original-website.com'"
+
+        document.getElementById("redirect-link").innerHTML = `<a href="https://${originalLink}" target="_self">${originalLinkText}</a>`;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+    This is a website cloning project, the original website's address is:
+    https://designedbyaturtle.com/
+    -->
+
+    <title>Designed by a Turtle &middot; A software Blog by Edd Turtles</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 
+    - he's got a nice turtle ascii art here, maybe like a signature? totally love it. 
+    -->
+
+
+</head>
+
+<body>
+
+    <nav class="nav" id="navigation">
+        <a href="/">
+            <img src="apple-touch-icon.png" class="nav__logo">
+        </a>
+        <ul class="nav__list">
+
+            <li>
+                <a href="util-redirect.html?original=designedbyaturtle.com/blog/">Blog</a>
+            </li>
+
+            <li>
+                <a href="util-redirect.html?original=designedbyaturtle.com/portfolio/">Projects</a>
+            </li>
+
+            <li>
+                <a href="util-redirect.html?original=designedbyaturtle.com/search/">
+                    <div class="nav__searchicon">search</div>
+                </a>
+            </li>
+            <li>
+                <a href="util-redirect.html?original=designedbyaturtle.com/contact/">
+                    <div class="nav__contacticon">contact</div>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="splash-container">
+            <div class="splash">
+
+                <h1>
+                    <span class="nonfancy">Designed by a Turtle</span>
+                    <span class="fancy">.</span>
+                </h1>
+
+                <h3 id="specific__h3">
+                    A Software Blog by Edd Turtle &nbsp;🎉
+                </h3>
+
+                <p>
+                    I'm a PHP and Go developer, specializing in building scalable web applications. Currently working
+                    at <a href="util-redirect.html?original=www.hoowla.com/">Hoowla</a>, a prop-tech company in the UK. I enjoy <a
+                        href="util-redirect.html?original=designedbyaturtle.com/blog/">blogging</a> about my experiences, mostly
+                    about creating and coding new things.
+                </p>
+
+                <p>Take a look at my <a href="util-redirect.html?original=designedbyaturtle.com/portfolio/">side projects</a> too, 
+                    if you are interested, or get in touch.</p>
+
+                <br>
+
+                <div class="social-icons">
+
+                    <a  class="social-icons__link" 
+                        title="Twitter"
+                        href="util-redirect.html?original=twitter.com/eddturtle" target="_blank">
+                        <!-- i expected it to use <img> tags, but looks like there's 
+                            an argument for using background-image instead of <img>
+                            
+                            also, the original uses inline style for just setting the background image,
+                            but we're not allowed so i'll create styles for ids
+                        -->
+                        <div id="social-twitter" class="social-icons__icon"></div>
+                    </a>
+
+                    <a class="social-icons__link" title="GitHub" 
+                        href="util-redirect.html?original=github.com/eddturtle" target="_blank">
+                        <div id="social-github" class="social-icons__icon"></div>
+                    </a>
+
+                    <a class="social-icons__link" title="LinkedIn" 
+                        href="util-redirect.html?original=www.linkedin.com/in/eddturtle/" target="_blank">
+                        <div id="social-linkedin" class="social-icons__icon"></div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    
+    <div class="disclaimer">
+        This webpage is a clone of <a href="https://designedbyaturtle.com/" target="_blank">designedbyaturtle.com</a>,
+        and most of the images and texts used here are the property of their respective owners.
+    </div>
+</body>
+
+</html>

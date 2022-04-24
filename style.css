@@ -1,0 +1,357 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Inconsolata:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+/* resets? */
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit; /* all must inherit border-box */
+}
+
+
+html {
+    font-family: Ubuntu, Cantarell, helvetica neue, sans-serif;
+    font-size: 95%;
+}
+
+@media screen and (min-width:800px) {
+    html { font-size: 100%; }
+}
+
+@media screen and (min-width:1400px) {
+    html { font-size: 115%; }
+}
+
+
+/* so it sets all common first, then specifics, I guess it's DRY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.5rem;
+}
+
+h1 {
+    font-size: 2.121rem;  /* magic numbers, but it has to be a clone so I'll keep it */
+    line-height: 2.25rem; /* could use: https://nekocalc.com/px-to-rem-converter */
+    margin-top: 2.25rem;
+}
+
+h2 { font-size: 1.414rem; }
+h3 { font-size: 1.17833333rem; }
+h4 { font-size: .98194444rem; }
+h5 { font-size: .81828704rem; }
+
+a:link,
+a:visited { color: #2863ec; }
+a:hover   { color: #5785f0; }
+a:focus   { color: #124bcf; }
+
+p {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.7rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+ul li {
+    line-height: 1.5rem;
+}
+
+.nav {
+    font-size: 16px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    visibility: hidden;
+    z-index: 1; /* in front of the others, -1 would mean behind */
+    text-align: right;
+}
+
+@media screen and (min-width:800px) {
+    .nav {
+        display: block;
+        visibility: visible;
+        padding-top: 2.5em;
+        width: 100px;
+    }
+
+    .nav img { margin-bottom: 1.8em; }
+}
+
+.nav__logo {
+    width: 48px;
+    height: 48px;
+}
+
+.nav__logo:hover,
+.nav__logo:active { opacity: 0.8; }
+
+.nav__list {
+    text-align: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+
+@media screen and (min-width:800px) {
+    .nav__list { width: auto; }
+}
+
+@media screen and (max-width:799px) {
+    .nav__list {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+}
+
+.nav__list li {
+    margin-bottom: 3em;
+    line-height: 1.5em;
+}
+
+.nav__list li:last-of-type {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width:800px) {
+    .nav__list li { margin-bottom: 1.75em; }
+}
+
+.nav__list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.nav__list a:hover { color: #333; }
+
+@media screen and (min-width:800px) {
+    .nav__list a { font-size: 1em; }
+}
+
+.nav__searchicon,
+.nav__contacticon {
+    margin-top: 12px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.6;
+    font-size: 0;
+}
+
+.nav__searchicon { background-image: url(search.svg); }
+.nav__contacticon { background-image: url(email.svg); }
+
+.nav__searchicon:hover,
+.nav__contacticon:hover { opacity: 1; }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons__link { padding: .8rem; }
+
+.social-icons__link:not(:last-child) {  /* to every child except the last one */
+    margin-right: 1em; 
+}
+
+.social-icons__link .social-icons__icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.social-icons__link .social-icons__icon:hover {
+    /* filter: invert(48%) sepia(70%) saturate(7046%) hue-rotate(216deg) brightness(93%) contrast(98%);  */
+    /* color: #5785f0; */
+    /* background-color: #5785f0; */
+
+    /* because it's a background image, applies all these effects to get the blue color of the link */
+    filter: invert(48%) sepia(70%) saturate(7046%) hue-rotate(216deg) brightness(93%) contrast(98%);
+}
+
+
+main { padding: 3rem 1.5rem 1rem; } 
+
+@media screen and (min-width:800px) {
+    main { padding-left: calc(1.5rem + 100px); }
+}
+
+@media screen and (max-width:799px) {
+    main { padding-top: calc(3rem + 4rem); }
+}
+
+
+.splash-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+@media screen and (min-width:800px) {
+    .splash-container { font-size: 18px; }
+}
+
+.splash h1 {
+    font-size: 3.2em;
+    line-height: 1.4;
+    letter-spacing: -.03em;
+    margin: 0;
+}
+
+.splash .nonfancy { 
+    background: linear-gradient(to left, #3facee, #134ed8); 
+    background-clip: content-box ;
+    -webkit-background-clip: text;  /* looks like it's required */
+    /* -webkit-text-fill-color: transparent */
+    color: transparent;
+}
+
+.splash h2 {
+    font-size: 2.25em;
+    font-weight: 500;
+    line-height: 1.25;
+    max-width: 22em;
+    letter-spacing: -.03em;
+}
+
+.splash p { max-width: 740px; }
+
+.fancy {    /* it's the dot */
+    color: #134ed8;
+    padding-left: 10px;
+    animation-duration: 1s;
+    animation-name: bump;   /* i really like this one */
+    animation-iteration-count: 1;
+    margin-left: -16px;
+    transition-timing-function: cubic-bezier(.55, 0, 1, .45);
+    display: inline-block
+}
+
+@keyframes bump {
+    0% {
+        padding-left: 45px
+    }
+
+    65% {
+        padding-left: 0;
+        transform: translateY(0)
+    }
+
+    80% {
+        transform: translateY(-5px)
+    }
+
+    100% {
+        padding-left: 10px;
+        transform: translateY(0)
+    }
+}
+
+main {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%
+}
+
+.social-icons {
+    justify-content: flex-start;
+    padding-top: 1rem;
+    margin-left: -.8rem
+}
+
+@media screen and (max-width:800px) {
+    .social-icons {
+        justify-content: center
+    }
+}
+
+
+
+
+
+/* the original website has these styles inline in html, 
+but we're not allowed to do it like that so I've created specific rules for them */
+#specific__h3 { padding-bottom: 10px; }
+#social-twitter { background-image: url('twitter.svg'); }
+#social-github { background-image: url('github.svg'); }
+#social-linkedin { background-image: url('linkedin.svg'); }
+
+
+/* the disclaimer part of the pages */
+.disclaimer {
+    background-color: rgba(242, 233, 205, 0.50);
+    opacity: 20%;
+    border: 1px dotted #333;
+    padding: 10px;
+    color: rgba(95, 75, 50, 1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 75%;
+    transition: opacity 0.5s ease-in-out;
+}
+.disclaimer:hover { opacity: 85%; }
+.disclaimer a { text-decoration:none; }
+.disclaimer:hover a { text-decoration: underline dotted; }
+
+
+/* the redirect page */
+.box-message {
+    background-color: #fff;
+    color: #333;
+    padding: 5px;
+    margin: 10px;
+    border: #c3c3c3 1px solid;
+}
+
+.box-message p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    line-height: 1.7rem;
+}
+
+#redirect-link a {
+    padding: 0.5rem;
+    line-height: 1.7rem;
+    text-decoration: underline dotted transparent;
+    transition: 0.3s ease-in;
+}
+#redirect-link a:hover{
+    text-decoration-color: #333
+}
