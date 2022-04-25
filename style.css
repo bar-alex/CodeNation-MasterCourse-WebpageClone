@@ -9,11 +9,6 @@ html {
     overflow-y: scroll;
 }
 
-body {
-    background-color: #fff;
-    color: #333;
-}
-
 *,
 *:before,
 *:after {
@@ -28,6 +23,7 @@ html {
     font-size: 95%;
 }
 
+
 @media screen and (min-width:800px) {
     html { font-size: 100%; }
 }
@@ -36,6 +32,10 @@ html {
     html { font-size: 115%; }
 }
 
+body {
+    background-color: #fff;
+    color: #333;
+}
 
 /* so it sets all common first, then specifics, I guess it's DRY */
 h1,
